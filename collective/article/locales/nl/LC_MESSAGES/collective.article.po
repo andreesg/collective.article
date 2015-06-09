@@ -1,0 +1,620 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.article\n"
+"POT-Creation-Date: 2015-04-09 15:28+0000\n"
+"PO-Revision-Date: 2015-04-10 15:29+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: Dutch <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: collective.article\n"
+
+#: ../profiles/default/types/Object.xml:7
+msgid "Object"
+msgstr "Objecten"
+
+#: ../profiles/default/types/Object.xml:8
+msgid "Information about an object typically collected by museums"
+msgstr "Informatie over een object meestal verzameld door musea"
+
+#: ../article.py
+msgid "Book"
+msgstr "Boeken"
+
+#: ../article.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../article.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../article.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../article.py
+msgid "Title, author, imprint, collation"
+msgstr "Titel, auteur, impressum, collatie"
+
+#: ../article.py
+msgid "Title and author"
+msgstr "Titel en auteur"
+
+#: ../article.py
+msgid "Article"
+msgstr "Lidwoord"
+
+#: ../article.py
+msgid "Title"
+msgstr "Titel"
+
+#: ../article.py
+msgid "Statement of respsib."
+msgstr "Auteursvermelding"
+
+#: ../article.py
+msgid "Author"
+msgstr "Auteur"
+
+#: ../article.py
+msgid "Role"
+msgstr "Rol"
+
+#: ../article.py
+msgid "Illustrator"
+msgstr "Illustrator"
+
+#: ../article.py
+msgid "Corp.author"
+msgstr "Corp.auteur"
+
+#: ../article.py
+msgid "Edition"
+msgstr "Editie"
+
+#: ../article.py
+msgid "Imprint"
+msgstr "Impressum"
+
+#: ../article.py
+msgid "Imprint"
+msgstr "Impressum"
+
+#: ../article.py
+msgid "Place"
+msgstr "Plaats"
+
+#: ../article.py
+msgid "Publisher"
+msgstr "Uitgever"
+
+#: ../article.py
+msgid "Year"
+msgstr "Jaar"
+
+#: ../article.py
+msgid "Place printed"
+msgstr "Plaats van druk"
+
+#: ../article.py
+msgid "Printer"
+msgstr "Drukker"
+
+#: ../article.py
+msgid "Sort year"
+msgstr "Sorteerjaar"
+
+#: ../article.py
+msgid "Collation"
+msgstr "Collatie"
+
+#: ../article.py
+msgid "Pagination"
+msgstr "Pagina's"
+
+#: ../article.py
+msgid "Illustrations"
+msgstr "Illustraties"
+
+#: ../article.py
+msgid "Dimensions"
+msgstr "Formaat"
+
+#: ../article.py
+msgid "Accompanying material"
+msgstr "Begeleidend materiaal"
+
+#: ../article.py
+msgid "Series, notes, ISBN"
+msgstr "Reeks, annotatie, ISBN"
+
+#: ../article.py
+msgid "Series"
+msgstr "Reeks"
+
+#: ../article.py
+msgid "Series article"
+msgstr "Lidwoord reeks"
+
+#: ../article.py
+msgid "Series no."
+msgstr "Reeksnummer"
+
+#: ../article.py
+msgid "ISSN series"
+msgstr "ISSN reeks"
+
+#: ../article.py
+msgid "Subseries"
+msgstr "Onderreeks"
+
+#: ../article.py
+msgid "Subseries article"
+msgstr "Onderreeks lidwoord"
+
+#: ../article.py
+msgid "Subseries number"
+msgstr "Onderreeks nummer"
+
+#: ../article.py
+msgid "ISSN subseries"
+msgstr "ISSN onderreeks"
+
+#: ../article.py
+msgid "Notes"
+msgstr "Annotatie"
+
+#: ../article.py
+msgid "Bibliographical notes"
+msgstr "Annotatie"
+
+#: ../article.py
+msgid "ISBN"
+msgstr "ISBN"
+
+#: ../article.py
+msgid "Price"
+msgstr "Prijs"
+
+#: ../article.py
+msgid "Binding method"
+msgstr "Bindwijze"
+
+#: ../article.py
+msgid "ISSN"
+msgstr "ISSN"
+
+#: ../article.py
+msgid "Conference"
+msgstr "Conferentie"
+
+#: ../article.py
+msgid "Abstract and subject terms"
+msgstr "Samenvatting, classificatie, trefwoorden"
+
+#: ../article.py
+msgid "Material type"
+msgstr "Materiaalsoort"
+
+#: ../article.py
+msgid "Bibl. form"
+msgstr "Blibliogr. vorm"
+
+#: ../article.py
+msgid "Language"
+msgstr "Taal"
+
+#: ../article.py
+msgid "Level"
+msgstr "Niveau"
+
+#: ../article.py
+msgid "Class number"
+msgstr "Class. code"
+
+#: ../article.py
+msgid "Subject term type"
+msgstr "Soort trefwoord"
+
+#: ../article.py
+msgid "Subject term"
+msgstr "Trefwoord"
+
+#: ../article.py
+msgid "Proper name"
+msgstr "Eigennaam"
+
+#: ../article.py
+msgid "Person keyword type"
+msgstr "Soort pers.trefwoord"
+
+#: ../article.py
+msgid "Person keyword type"
+msgstr "Naam"
+
+#: ../article.py
+msgid "Role"
+msgstr "Rol"
+
+#: ../article.py
+msgid "Geographical keyword"
+msgstr "Greografish trefwoord"
+
+#: ../article.py
+msgid "Period"
+msgstr "Periode"
+
+#: ../article.py
+msgid "Start date"
+msgstr "Begindatum"
+
+#: ../article.py
+msgid "End date"
+msgstr "Einddatum"
+
+#: ../article.py
+msgid "Digital references"
+msgstr "Digitale referenties"
+
+#: ../article.py
+msgid "Reference"
+msgstr "Referentie"
+
+#: ../article.py
+msgid "Abstract"
+msgstr "Samenvatting"
+
+#
+# Reproductions
+#
+
+#: ../article.py
+msgid "Reproductions"
+msgstr "Reproducties"
+
+#: ../article.py
+msgid "Reproduction"
+msgstr "Reproductie"
+
+#: ../article.py
+msgid "Reference"
+msgstr "Referentie"
+
+#: ../article.py
+msgid "Format"
+msgstr "Formaat"
+
+#: ../article.py
+msgid "Type"
+msgstr "Soort"
+
+#: ../article.py
+msgid "Date"
+msgstr "Datum"
+
+#: ../article.py
+msgid "Identifier (URL)"
+msgstr "Identifier (URL)"
+
+#: ../article.py
+msgid "Notes"
+msgstr "Bijzonderheden"
+
+#
+# exhibitions_auctions_collections
+#
+
+#: ../article.py
+msgid "Exhibitions, auctions, collections"
+msgstr "Tentoonstellingen, veilingen, collecties"
+
+#: ../article.py
+msgid "Exhibition"
+msgstr "Tentoonstelling"
+
+#: ../article.py
+msgid "Exhibition name"
+msgstr "Tentoonstellingsnaam"
+
+#: ../article.py
+msgid "Date"
+msgstr "Datum"
+
+#: ../article.py
+msgid "to"
+msgstr "t/m"
+
+#: ../article.py
+msgid "Venue"
+msgstr "Locatie"
+
+#: ../article.py
+msgid "Venue"
+msgstr "Locatie"
+
+#: ../article.py
+msgid "Auction"
+msgstr "Veiling"
+
+#: ../article.py
+msgid "Auction name"
+msgstr "Veilingnaam"
+
+#: ../article.py
+msgid "Auctioneer"
+msgstr "Veilinghuis"
+
+#: ../article.py
+msgid "Collector"
+msgstr "Collectioneur"
+
+#: ../article.py
+msgid "Commissair-priseur"
+msgstr "Commissair-priseur"
+
+#: ../article.py
+msgid "Auction number"
+msgstr "Veilingnummer"
+
+#: ../article.py
+msgid "Collection"
+msgstr "Collectie"
+
+#: ../article.py
+msgid "Collection name"
+msgstr "Collectienaam"
+
+#: ../article.py
+msgid "Organisation"
+msgstr "Organisatie"
+
+#: ../article.py
+msgid "Location"
+msgstr "Locatie"
+
+#
+# Relations
+#
+
+#: ../article.py
+msgid "Relations"
+msgstr "Relaties"
+
+#: ../article.py
+msgid "Volume"
+msgstr "Deel"
+
+#: ../article.py
+msgid "Analytical cataloguing"
+msgstr "Koepelgegevens"
+
+#: ../article.py
+msgid "record no."
+msgstr "recordnr."
+
+#: ../article.py
+msgid "Part of"
+msgstr "Onderdeel van"
+
+#: ../article.py
+msgid "Consists of"
+msgstr "Bestaat uit"
+
+#: ../article.py
+msgid "Museum objects"
+msgstr "Museumobjecten"
+
+#: ../article.py
+msgid "Object no."
+msgstr "Objectnr"
+
+#: ../article.py
+msgid "Object name"
+msgstr "Objectnaam"
+
+#: ../article.py
+msgid "Maker"
+msgstr "Vervaardiger"
+
+#
+# Free fields
+#
+
+
+#: ../article.py
+msgid "Free fields and numbers"
+msgstr "Vrije velden en nummer"
+
+#: ../article.py
+msgid "Free fields"
+msgstr "Vrije velden"
+
+#: ../article.py
+msgid "Confidential"
+msgstr "Vertrouwelijk"
+
+#: ../article.py
+msgid "Contents"
+msgstr "Inhoud"
+
+#: ../article.py
+msgid "Other number"
+msgstr "Andere nummers"
+
+#: ../article.py
+msgid "PPN"
+msgstr "PPN"
+
+#
+# Copies and shelf marks
+#
+
+#: ../article.py
+msgid "Copies and shelf marks"
+msgstr "Exemplaren en vindplaatsen"
+
+#: ../article.py
+msgid "Default shelf mark"
+msgstr "Standaard signatuur"
+
+#: ../article.py
+msgid "Copy details"
+msgstr "Exemplaargegevens"
+
+#: ../article.py
+msgid "Copy number"
+msgstr "Exemplaarnummer"
+
+#: ../article.py
+msgid "Shelf mark"
+msgstr "Plaatscode"
+
+#: ../article.py
+msgid "Availability"
+msgstr "Beschikbaarheid"
+
+#: ../article.py
+msgid "Loan category"
+msgstr "Uitleencategorie"
+
+#: ../article.py
+msgid "Site"
+msgstr "Filiaal"
+
+#: ../article.py
+msgid "Location notes"
+msgstr "Bijzonderheden locatie"
+
+#
+# Series
+#
+
+#: ../article.py
+msgid "Quantity"
+msgstr "Aantal"
+
+#: ../article.py
+msgid "Lead word"
+msgstr "Lidwoord"
+
+#: ../article.py
+msgid "Contents"
+msgstr "Omvang"
+
+#: ../article.py
+msgid "Physical details"
+msgstr "Fysieke kenmerken"
+
+
+#: ../article.py
+msgid "Production"
+msgstr "Productie"
+
+#: ../article.py
+msgid "Broadcast"
+msgstr "Uitzending"
+
+#: ../article.py
+msgid "Broadcasting company"
+msgstr "Omroep"
+
+#: ../article.py
+msgid "Production company"
+msgstr "Productiemaatschappij"
+
+
+#: ../article.py
+msgid "Audiovisual"
+msgstr "Audio-visuele materialen"
+
+
+#: ../article.py
+msgid "Audio-visual materials"
+msgstr "Audio-visuele materialen"
+
+#
+# Articles
+#
+
+#: ../article.py
+msgid "Article"
+msgstr "Artikel"
+
+#: ../article.py
+msgid "Articles"
+msgstr "Artikelen"
+
+#
+# Sources
+#
+
+#: ../article.py
+msgid "Source"
+msgstr "Vindplaats"
+
+
+#: ../article.py
+msgid "Source title article"
+msgstr "Lidwoord brontitel"
+
+
+#: ../article.py
+msgid "Material type"
+msgstr "Materiaalsoort"
+
+#: ../article.py
+msgid "Source title"
+msgstr "Brontitel"
+
+#: ../article.py
+msgid "Volume"
+msgstr "Jaargang"
+
+#: ../article.py
+msgid "Issue"
+msgstr "Aflevering"
+
+#: ../article.py
+msgid "Day"
+msgstr "Dag"
+
+#: ../article.py
+msgid "Year"
+msgstr "Jaar"
+
+#: ../article.py
+msgid "Pagination"
+msgstr "Pagina's"
+
+#: ../article.py
+msgid "Notes"
+msgstr "Bijzonderheden"
+
+#: ../article.py
+msgid "Bibliographical notes"
+msgstr "Annotatie"
+
+#: ../article.py
+msgid "Illustrations"
+msgstr "Illustraties"
+
+#: ../article.py
+msgid "Title, author, source"
+msgstr "Titel, auteur, vindplaats"
+
+
+
+
+
+
+
+
+
+
+
