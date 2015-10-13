@@ -1,4 +1,72 @@
 <!-- Secondary fieldsets -->
+
+<div metal:define-macro="private_view">
+  <tal:title_author tal:condition='python: fieldset_text == "title_author"'
+    tal:define='widgets group/widgets'>
+
+    <!-- Books details -->
+    <div class="row no-padding">
+
+        <h2 class="page-header" i18n:translate="">Titel en auteur</h2>
+
+        <div class="form-horizontal">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_leadWord/@@ploneform-render-widget"/>
+        </div>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_title/@@ploneform-render-widget"/>
+        </div>
+
+        <div class="form-horizontal">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_statementOfRespsib/@@ploneform-render-widget"/>
+        </div>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_author/@@ploneform-render-widget"/>
+        </div>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_illustrator/@@ploneform-render-widget"/>
+        </div>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_corpAuthors/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Vindplaats</h2>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_source_source/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Sorteerjaar</h2>
+
+        <div class="form-horizontal">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_sortYear_sortYear/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Illustraties</h2>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_illustrations_illustrations/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Annotatie</h2>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_notes_bibliographicalNotes/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Conferentie</h2>
+
+        <div class="form-horizontal gridfield">
+            <tal:widget tal:replace="structure widgets/titleAuthorSource_conference_conference/@@ploneform-render-widget"/>    
+        </div>
+
+    </div>
+  </tal:title_author>
+</div>
+
   
 <div metal:define-macro="test">
 
@@ -30,8 +98,8 @@
           <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_illustrator/@@ploneform-render-widget"/>
         </div>
 
-        <div class="form-horizontal">
-          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_corpAuthor/@@ploneform-render-widget"/>
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/titleAuthorSource_titleAuthor_corpAuthors/@@ploneform-render-widget"/>
         </div>
 
         <h2 class="page-header" i18n:translate="">Source</h2>
@@ -75,15 +143,15 @@
 
       <h2 class="page-header" i18n:translate="">Abstract and subject terms</h2>
       
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_materialType/@@ploneform-render-widget"/>
       </div>
       
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_biblForm/@@ploneform-render-widget"/>
       </div>
 
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_language/@@ploneform-render-widget"/>
       </div>
 
@@ -95,7 +163,7 @@
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_notes/@@ploneform-render-widget"/>
       </div>
 
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_classNumber/@@ploneform-render-widget"/>    
       </div>
 
@@ -107,11 +175,11 @@
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_personKeywordType/@@ploneform-render-widget"/>    
       </div>
 
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_geographicalKeyword/@@ploneform-render-widget"/>    
       </div>
 
-      <div class="form-horizontal gridfield">
+      <div class="form-horizontal">
           <tal:widget tal:replace="structure widgets/abstractAndSubjectTerms_period/@@ploneform-render-widget"/>    
       </div>
 
@@ -188,12 +256,6 @@
         </div>
 
         <h2 class="page-header" i18n:translate="">Analytical cataloguing</h2>
-
-        <div class="form-horizontal">
-          <tal:widget tal:replace="structure widgets/relations_analyticalCataloguing_recordNo/@@ploneform-render-widget"/>
-          <tal:widget tal:replace="structure widgets/relations_analyticalCataloguing_volume/@@ploneform-render-widget"/>
-          <tal:widget tal:replace="structure widgets/relations_analyticalCataloguing_title/@@ploneform-render-widget"/>
-        </div>
 
         <div class="form-horizontal gridfield">
           <tal:widget tal:replace="structure widgets/relations_analyticalCataloguing_partOf/@@ploneform-render-widget"/>
