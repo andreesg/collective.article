@@ -63,7 +63,7 @@ from .utils.views import *
 
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget
+from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget, ExtendedRelatedItemsWidget
 from collective.object.utils.source import ObjPathSourceBinder
 from plone.directives import dexterity, form
 
@@ -148,7 +148,7 @@ class IArticle(form.Schema):
         value_type=DictRow(title=_(u'Corp.author'), schema=ICorpAuthor),
         required=False)
     form.widget(titleAuthorSource_titleAuthor_corpAuthors=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_corpAuthor')
+    dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_corpAuthors')
 
     # Source
     titleAuthorSource_source_source = ListField(title=_(u'Source'),
@@ -253,7 +253,7 @@ class IArticle(form.Schema):
     abstractAndSubjectTerms_subjectTerm = ListField(title=_(u'Subject term'),
         value_type=DictRow(title=_(u'Subject term'), schema=ISubjectTerm),
         required=False)
-    form.widget(abstractAndSubjectTerms_subjectTerm=DataGridFieldFactory)
+    form.widget(abstractAndSubjectTerms_subjectTerm=BlockDataGridFieldFactory)
     dexteritytextindexer.searchable('abstractAndSubjectTerms_subjectTerm')
 
     abstractAndSubjectTerms_personKeywordType = ListField(title=_(u'Person keyword type'),
@@ -359,7 +359,7 @@ class IArticle(form.Schema):
     # # # # # # # # # # # # # # # # # # # # #
 
     model.fieldset('relations', label=_(u'Relations'), 
-        fields=['relations_volume', 'relations_analyticalCataloguing_partOf',
+        fields=['relations_volume', 'relations_analyticalCataloguing_partOf', 'relations_museumobjects',
                 'relations_analyticalCataloguing_consistsOf', 'relations_museumObjects', 'relations_relatedMuseumObjects']
     )
 
@@ -398,6 +398,18 @@ class IArticle(form.Schema):
         ),
         required=False
     )
+
+    relations_museumobjects = RelationList(
+        title=_(u'Object no.'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type="Object")
+        ),
+        required=False
+    )
+    form.widget('relations_museumobjects', ExtendedRelatedItemsWidget, vocabulary='collective.object.relateditems')
 
     # # # # # # # # # # # # # # # # # # # # #
     # Free fields and numbers               #

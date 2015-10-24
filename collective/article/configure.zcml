@@ -87,6 +87,16 @@
     />
 
   <!-- -*- extra stuff goes here -*- -->
+  <adapter name="abstractAndSubjectTerms_biblForm" factory=".utils.indexers.abstractAndSubjectTerms_biblForm" />
+  <adapter name="abstractAndSubjectTerms_materialType" factory=".utils.indexers.abstractAndSubjectTerms_materialType" />
+  <adapter name="abstractAndSubjectTerms_language" factory=".utils.indexers.abstractAndSubjectTerms_language" />
+  <adapter name="abstractAndSubjectTerms_classNumber" factory=".utils.indexers.abstractAndSubjectTerms_classNumber" />
+  <adapter name="abstractAndSubjectTerms_geographicalKeyword" factory=".utils.indexers.abstractAndSubjectTerms_geographicalKeyword" />
+  <adapter name="abstractAndSubjectTerms_subjectTerm_subjectType" factory=".utils.indexers.abstractAndSubjectTerms_subjectTerm_subjectType" />
+  <adapter name="abstractAndSubjectTerms_subjectTerm_properName" factory=".utils.indexers.abstractAndSubjectTerms_subjectTerm_properName" />
+  <adapter name="copiesAndShelfMarks_copyDetails_loan" factory=".utils.indexers.copiesAndShelfMarks_copyDetails_loan" />
+  <adapter name="copiesAndShelfMarks_copyDetails_site" factory=".utils.indexers.copiesAndShelfMarks_copyDetails_site" />
+  
   <adapter for=".article.IArticle"
     provides=".article.INameFromPersonNames"
     factory=".article.NameFromPersonNames"
