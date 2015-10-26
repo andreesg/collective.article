@@ -472,7 +472,23 @@ class IArticle(form.Schema):
 
 class Article(Container):
     grok.implements(IArticle)
-    pass
+
+    def Title(self):
+        ''' Return a title from title author '''
+        return self.titleAuthorSource_titleAuthor_title[0]['title']
+
+    @property
+    def title(self):
+        ''' return title '''
+        return self.titleAuthorSource_titleAuthor_title[0]['title']
+
+    @title.setter
+    def title(self, value):
+        try:
+            self.titleAuthorSource_titleAuthor_title[0]['title'] = value
+        except:
+            pass
+            
 
 # # # # # # # # # # # # # #
 # Book add/edit views   # 
