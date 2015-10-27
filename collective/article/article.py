@@ -493,7 +493,10 @@ class Article(Container):
 
     def Title(self):
         ''' Return a title from title author '''
-        return self.titleAuthorSource_titleAuthor_title[0]['title']
+        try:
+            return self.titleAuthorSource_titleAuthor_title[0]['title']
+        except:
+            return ""
 
     @property
     def title(self):
