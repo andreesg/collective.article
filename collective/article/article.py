@@ -63,7 +63,7 @@ from .utils.views import *
 
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget, ExtendedRelatedItemsWidget
+from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget, AjaxSingleSelectFieldWidget, ExtendedRelatedItemsFieldWidget
 from collective.object.utils.source import ObjPathSourceBinder
 from plone.directives import dexterity, form
 
@@ -109,7 +109,7 @@ class IArticle(form.Schema):
         fields=['titleAuthorSource_titleAuthor_leadWord', 'titleAuthorSource_titleAuthor_title',
                 'titleAuthorSource_titleAuthor_statementOfRespsib', 'titleAuthorSource_titleAuthor_author',
                 'titleAuthorSource_titleAuthor_illustrator',
-                'titleAuthorSource_titleAuthor_corpAuthors','titleAuthorSource_source_source', 'titleAuthorSource_sortYear_sortYear',
+                'titleAuthorSource_titleAuthor_corpAuthor','titleAuthorSource_source_source', 'titleAuthorSource_sortYear_sortYear',
                 'titleAuthorSource_illustrations_illustrations', 'titleAuthorSource_notes_bibliographicalNotes',
                 'titleAuthorSource_conference_conference']
     )
@@ -144,11 +144,17 @@ class IArticle(form.Schema):
     form.widget(titleAuthorSource_titleAuthor_illustrator=BlockDataGridFieldFactory)
     dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_illustrator')
 
-    titleAuthorSource_titleAuthor_corpAuthors = ListField(title=_(u'Corp.author'),
-        value_type=DictRow(title=_(u'Corp.author'), schema=ICorpAuthor),
-        required=False)
-    form.widget(titleAuthorSource_titleAuthor_corpAuthors=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_corpAuthors')
+    titleAuthorSource_titleAuthor_corpAuthor =  RelationList(
+        title=_(u'Corp.author', default=u'Corp.author'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+        ),
+        required=False
+    )
+    form.widget('titleAuthorSource_titleAuthor_corpAuthor', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Source
     titleAuthorSource_source_source = ListField(title=_(u'Source'),
@@ -359,8 +365,8 @@ class IArticle(form.Schema):
     # # # # # # # # # # # # # # # # # # # # #
 
     model.fieldset('relations', label=_(u'Relations'), 
-        fields=['relations_volume', 'relations_analyticalCataloguing_partOf', 'relations_museumobjects',
-                'relations_analyticalCataloguing_consistsOf', 'relations_museumObjects', 'relations_relatedMuseumObjects']
+        fields=['relations_volume', 'relations_analyticalCataloguing_partsOf', 'relations_museumobjects',
+                'relations_analyticalCataloguing_consistsof', 'relations_museumObjects', 'relations_relatedMuseumObjects']
     )
 
     relations_volume = schema.TextLine(
@@ -370,17 +376,29 @@ class IArticle(form.Schema):
     dexteritytextindexer.searchable('relations_volume')
 
     # Analytical cataloguing
-    relations_analyticalCataloguing_partOf = ListField(title=_(u'Part of'),
-        value_type=DictRow(title=_(u'Part of'), schema=IPartOf),
-        required=False)
-    form.widget(relations_analyticalCataloguing_partOf=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('relations_analyticalCataloguing_partOf')
+    relations_analyticalCataloguing_partsOf = RelationList(
+        title=_(u'Part of'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder()
+        ),
+        required=False
+    )
+    form.widget('relations_analyticalCataloguing_partsOf', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
-    relations_analyticalCataloguing_consistsOf = ListField(title=_(u'Consists of'),
-        value_type=DictRow(title=_(u'Consists of'), schema=IConsistsOf),
-        required=False)
-    form.widget(relations_analyticalCataloguing_consistsOf=BlockDataGridFieldFactory)
-    dexteritytextindexer.searchable('relations_analyticalCataloguing_consistsOf')
+    relations_analyticalCataloguing_consistsof = RelationList(
+        title=_(u'Consists of'),
+        default=[],
+        missing_value=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder()
+        ),
+        required=False
+    )
+    form.widget('relations_analyticalCataloguing_consistsof', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Museum objects
     relations_museumObjects = ListField(title=_(u'Museum objects'),
@@ -409,7 +427,7 @@ class IArticle(form.Schema):
         ),
         required=False
     )
-    form.widget('relations_museumobjects', ExtendedRelatedItemsWidget, vocabulary='collective.object.relateditems')
+    form.widget('relations_museumobjects', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # # # # # # # # # # # # # # # # # # # # #
     # Free fields and numbers               #
