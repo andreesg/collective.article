@@ -116,13 +116,13 @@ class IArticle(form.Schema):
 
     titleAuthorSource_titleAuthor_leadWord = schema.TextLine(
         title=_(u'Lead word'),
-        required=True
+        required=False
     )
     dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_leadWord')
 
     titleAuthorSource_titleAuthor_title = ListField(title=_(u'Title'),
         value_type=DictRow(title=_(u'Title'), schema=ITitle),
-        required=False)
+        required=True)
     form.widget(titleAuthorSource_titleAuthor_title=BlockDataGridFieldFactory)
     dexteritytextindexer.searchable('titleAuthorSource_titleAuthor_title')
 
