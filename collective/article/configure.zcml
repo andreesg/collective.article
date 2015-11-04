@@ -33,7 +33,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
     
-  <browser:page
+  <!--<browser:page
         name="contents_view"
         for="collective.article.article.IArticle"
         class="collective.article.article.ArticleView"
@@ -41,7 +41,7 @@
         permission="zope2.View"
         title="View Content"
         menu="plone_displayviews"
-        />
+        />-->
 
 
   <!-- Custom Edit form -->

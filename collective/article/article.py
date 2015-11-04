@@ -366,7 +366,7 @@ class IArticle(form.Schema):
 
     model.fieldset('relations', label=_(u'Relations'), 
         fields=['relations_volume', 'relations_analyticalCataloguing_partsOf', 'relations_museumobjects',
-                'relations_analyticalCataloguing_consistsof', 'relations_museumObjects', 'relations_relatedMuseumObjects']
+                'relations_analyticalCataloguing_consistsof']
     )
 
     relations_volume = schema.TextLine(
@@ -401,22 +401,6 @@ class IArticle(form.Schema):
     form.widget('relations_analyticalCataloguing_consistsof', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Museum objects
-    relations_museumObjects = ListField(title=_(u'Museum objects'),
-        value_type=DictRow(title=_(u'Museum objects'), schema=IMuseumObjects),
-        required=False)
-    form.widget(relations_museumObjects=DataGridFieldFactory)
-    dexteritytextindexer.searchable('relations_museumObjects')
-
-    relations_relatedMuseumObjects = RelationList(
-        title=_(u'Museum objects'),
-        default=[],
-        value_type=RelationChoice(
-            title=u"Related",
-            source=ObjPathSourceBinder()
-        ),
-        required=False
-    )
-
     relations_museumobjects = RelationList(
         title=_(u'Object no.'),
         default=[],
