@@ -87,6 +87,8 @@
     />
 
   <!-- -*- extra stuff goes here -*- -->
+  <adapter name="library_author" factory=".utils.indexers.library_author" />
+  
   <adapter name="abstractAndSubjectTerms_biblForm" factory=".utils.indexers.abstractAndSubjectTerms_biblForm" />
   <adapter name="abstractAndSubjectTerms_materialType" factory=".utils.indexers.abstractAndSubjectTerms_materialType" />
   <adapter name="abstractAndSubjectTerms_language" factory=".utils.indexers.abstractAndSubjectTerms_language" />
