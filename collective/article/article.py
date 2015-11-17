@@ -370,7 +370,7 @@ class IArticle(form.Schema):
     # # # # # # # # # # # # # # # # # # # # #
 
     model.fieldset('relations', label=_(u'Relations'), 
-        fields=['relations_volume', 'relations_analyticalCataloguing_partsOf', 'relations_museumobjects',
+        fields=['relations_volume', 'relations_analyticalCataloguing_partsOf',
                 'relations_analyticalCataloguing_consistsof']
     )
 
@@ -406,7 +406,7 @@ class IArticle(form.Schema):
     form.widget('relations_analyticalCataloguing_consistsof', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
     # Museum objects
-    relations_museumobjects = RelationList(
+    """relations_museumobjects = RelationList(
         title=_(u'Object no.'),
         default=[],
         missing_value=[],
@@ -416,7 +416,7 @@ class IArticle(form.Schema):
         ),
         required=False
     )
-    form.widget('relations_museumobjects', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
+    form.widget('relations_museumobjects', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')"""
 
     # # # # # # # # # # # # # # # # # # # # #
     # Free fields and numbers               #

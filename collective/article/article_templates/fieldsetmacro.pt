@@ -265,10 +265,12 @@
           <tal:widget tal:replace="structure widgets/relations_analyticalCataloguing_consistsof/@@ploneform-render-widget"/>
         </div>
 
-        <h2 class="page-header" i18n:translate="">Museum objects</h2>
-        
-        <div class="form-horizontal">
-          <tal:widget tal:content="structure view/getRelatedObjects"/>
+        <div class="object-listing">
+          <h2 class="page-header" i18n:translate="">Museum objects</h2>
+          
+          <div class="form-horizontal">
+            <tal:widget tal:content="structure view/getRelatedObjects"/>
+          </div>
         </div>
 
     </div>
