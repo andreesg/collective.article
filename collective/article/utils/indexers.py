@@ -31,6 +31,35 @@ def library_author(object, **kw):
         return ""
 
 @indexer(IArticle)
+def titleAuthorImprintCollation_titleAuthor_author_role(object, **kw):
+    try:
+        if hasattr(object, 'titleAuthorSource_titleAuthor_author'):
+            terms = []
+            items = object.titleAuthorSource_titleAuthor_author
+            if items:
+                for item in items:
+                    if item['roles']:
+                        for term in item['roles']:
+                            if term:
+                                terms.append(term)
+
+            return terms
+        else:
+            return []
+    except:
+        return []
+
+@indexer(IArticle)
+def article_priref(object, **kw):
+    try:
+        if hasattr(object, 'priref'):
+            return object.priref
+        else:
+            return ""
+    except:
+        return ""
+
+@indexer(IArticle)
 def abstractAndSubjectTerms_subjectTerm_subjectType(object, **kw):
     try:
         if hasattr(object, 'abstractAndSubjectTerms_subjectTerm'):

@@ -70,13 +70,13 @@
   </class>
 
   <!-- Custom plone form widget -->
-  <browser:page
+  <!--<browser:page
     name="ploneform-render-widget"
     for=".article.IFormWidget"
     class="plone.app.z3cform.templates.RenderWidget"
     permission="zope.Public"
     template="article_templates/widget.pt"
-  />
+  />-->
 
   <!-- Custom Add and Edit form macro -->
   <browser:page
@@ -87,7 +87,10 @@
     />
 
   <!-- -*- extra stuff goes here -*- -->
+  <adapter name="titleAuthorImprintCollation_titleAuthor_author_role" factory=".utils.indexers.titleAuthorImprintCollation_titleAuthor_author_role" />
+  
   <adapter name="library_author" factory=".utils.indexers.library_author" />
+  <adapter name="article_priref" factory=".utils.indexers.article_priref" />
   
   <adapter name="abstractAndSubjectTerms_biblForm" factory=".utils.indexers.abstractAndSubjectTerms_biblForm" />
   <adapter name="abstractAndSubjectTerms_materialType" factory=".utils.indexers.abstractAndSubjectTerms_materialType" />

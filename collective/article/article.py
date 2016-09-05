@@ -35,8 +35,8 @@ from .utils.source import ObjPathSourceBinder
 #
 # plone.app.widgets dependencies
 #
-from plone.app.widgets.dx import DatetimeFieldWidget, RelatedItemsFieldWidget
-from plone.app.widgets.dx import AjaxSelectFieldWidget
+from plone.app.z3cform.widget import DatetimeFieldWidget, RelatedItemsFieldWidget
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
 
 #
 # DataGridFields dependencies
@@ -155,7 +155,7 @@ class IArticle(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -246,7 +246,7 @@ class IArticle(form.Schema):
     dexteritytextindexer.searchable('abstractAndSubjectTerms_level')
 
 
-    abstractAndSubjectTerms_notes = ListField(title=_(u'label_notes_op'),
+    abstractAndSubjectTerms_notes = ListField(title=_(u'Notes'),
         value_type=DictRow(title=_(u'Notes'), schema=IAbstractNotes),
         required=False)
     form.widget(abstractAndSubjectTerms_notes=BlockDataGridFieldFactory)
@@ -387,7 +387,7 @@ class IArticle(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder()
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -399,7 +399,7 @@ class IArticle(form.Schema):
         missing_value=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder()
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -469,10 +469,6 @@ class IArticle(form.Schema):
 
 
 
-
-
-    
-
 # # # # # # # # # # # # # #
 # Book declaration        #
 # # # # # # # # # # # # # #
@@ -490,7 +486,10 @@ class Article(Container):
     @property
     def title(self):
         ''' return title '''
-        return self.titleAuthorSource_titleAuthor_title[0]['title']
+        try:
+            return self.titleAuthorSource_titleAuthor_title[0]['title']
+        except:
+            return ""
 
     @title.setter
     def title(self, value):
